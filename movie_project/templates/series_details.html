@@ -1,0 +1,51 @@
+{% extends 'home.html' %}
+{% block content%}
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Watchlist</title>
+
+    <style>
+        .bigimages img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+<div class="details" style="padding-top: 100px; display:flex;justify-content:center;">
+    <div class="card mb-3" style=" width:1000px;display:flex;justify-content:center;">
+        <div class="row g-0">
+            <div class="col-md-4 " style= "d-flex align-items-center justify-content-center">
+                <div class="bigimages" >
+                    <img src="{{object.image_url}}" class="img-fluid rounded-start" alt="...">
+                </div>
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <div class="bigtitle" style="padding-top: 5px;color:blue;"><h2><strong>{{object.title}}</strong></h2></div>
+                    <br>
+                    <div class="genre"><b>Genre:</b> {{object.genre}}</div><br>
+                    <div class="rating"><b>Rating:</b> {{object.rating}}</div><br>
+                    <div class="language"><b>Language:</b> {{object.language}}</div>
+                    <br>
+                    <div class="year"><b>Year:</b> {{object.year}}</div>
+                    <br>
+                    <div class="summary"><b>About:</b> {{object.summary}}</div><br>
+
+                    <form action="" method="POST">
+                        {% csrf_token %}
+                        <button type="submit" class="btn btn-primary mt-3">Streaming Now</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+{% endblock content %}

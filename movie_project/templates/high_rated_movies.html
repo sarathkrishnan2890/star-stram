@@ -1,0 +1,40 @@
+{% extends 'home.html' %}
+{% block content%}
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<br>
+<div class="headline"
+     style="font-size: 30px; font-weight: 900; color: rgb(58, 58, 56); text-align:center; padding-top:20px;">
+    Experience the Best with Our Top Rated Movies
+</div>
+<br>
+<div class="movie-list" style="padding-left:30px; padding-right:30px;">
+    <div class="row row-cols-1 row-cols-md-6 g-4">
+        {% for movie in movies %}
+        <div class="col">
+            <div class="card" style="height:320px;width:180px;">
+                <img src="{{ movie.image_url }}" style="height: 245px; width: 100%;" class="card-img-top"
+                     alt="{{ movie.title }}">
+                <div class="card-body"
+                     style="font-size: 11px; font-weight: 800; color: rgb(58, 58, 56);text-align:center;">
+                    <h5 class="card-title" style="font-size: 13px; font-weight: 800; color: rgb(58, 58, 56);text-align:center;">{{ movie.title }}</h5>
+
+                    <p class="card-text" style="font-size: 11px; font-weight: 800;">Rating: {{ movie.rating }}</p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+
+</body>
+</html>
+{% endblock content%}

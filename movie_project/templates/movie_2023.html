@@ -1,0 +1,49 @@
+{% extends 'home.html' %}
+{% block content %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>2023 Movies</title>
+    <style>
+        .card {
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
+        }
+    </style>
+</head>
+<body>
+<div class="headline" style="font-size: 30px; font-weight: 900; color: rgb(58, 58, 56); text-align:center; padding-top:20px;">
+From Screen to Heart: Meet the Movies of 2023
+</div>
+<br>
+<div class="movie-list" style="padding:30px;">
+    <div class="row row-cols-1 row-cols-md-6 g-4">
+        {% for movie in movies_2023 %}
+        <div class="col">
+            <div class="card " style="height:340px;width:180px;">
+                <a href="{% url 'movie_detail' movie.id %}">
+                <img src="{{ movie.image_url }}" style="height: 235px; width: 100%;  padding:1px; display:flex; justify-content:center;align-items:center;" class="card-img-top"
+                     alt="{{ movie.title }}">
+                </a>
+                <div class="card-body" style="font-size: 11px; font-weight: 800; color: rgb(58, 58, 56);text-align:center;">
+                    <h5 class="card-title"  style="font-size:15px;font-weight:830; text-align:center;">{{ movie.title }}</h5>
+                    <p class="card-text"><strong>Language:</strong> {{ movie.language }}</p>
+                    <p class="card-text"><strong>Year:</strong> {{ movie.year }}</p>
+
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+</body>
+</html>
+{% endblock content %}
+

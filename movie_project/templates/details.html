@@ -1,0 +1,74 @@
+{% extends 'home.html' %}
+{% block content %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Watchlist</title>
+    <link rel="stylesheet" href="{% static 'css/watchlist.css' %}">
+    <style>
+        .bigimages img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover; /* Ensure the image covers the entire container */
+        }
+    </style>
+</head>
+<body>
+<div class="details" style="padding-top: 100px; display:flex;justify-content:center;">
+    <div class="card mb-3" style=" width:1000px;display:flex;justify-content:center;">
+        <div class="row g-0">
+            <div class="col-md-4 " style= "d-flex align-items-center justify-content-center">
+                <div class="bigimages" >
+                    <img src="{{object.image_url}}" class="img-fluid rounded-start" alt="...">
+                </div>
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <div class="bigtitle" style="padding-top: 5px;color:blue;"><h2><strong>{{object.title}}</strong></h2></div>
+                    <br>
+                    <div class="genre"><b>Genre:</b> {{object.genre}}</div><br>
+                    <div class="rating"><b>Rating:</b> {{object.rating}}</div><br>
+                    <div class="language"><b>Language:</b> {{object.language}}</div>
+                    <br>
+                    <div class="year"><b>Year:</b> {{object.year}}</div>
+                    <br>
+                    <div class="summary"><b>About:</b> {{object.summary}}</div><br>
+
+                    <form action="{% url 'add_to_watchlist' movie_id=object.id %}" method="POST">
+                        {% csrf_token %}
+                        <button type="submit" class="btn btn-primary mt-3">Streaming Now</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Add this section to display related movies -->
+<div class="movie-list" style="padding-left: 70px; padding-right: 70px;">
+    <h3>Related Movies</h3>
+    <div class="row row-cols-1 row-cols-md-6 g-5">
+        {% for related_movie in related_movies %}
+        <div class="col">
+            <div class="card" style="height:270px;width:170px;">
+                <a href="{% url 'movie_detail' related_movie.id %}">
+                    <img src="{{ related_movie.image_url }}" style="height: 225px; width: 100%;" class="card-img-top" alt="{{ related_movie.title }}">
+                </a>
+                <div class="card-body" style="font-size: 11px; font-weight: 800; color: rgb(58, 58, 56);text-align:center;">
+                    <h5 class="card-title" style="font-size: 11px; font-weight: 800; color: rgb(58, 58, 56);text-align:center;">
+                        <a href="{% url 'movie_detail' related_movie.id %}">{{ related_movie.title }}</a>
+                    </h5>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+</body>
+</html>
+{% endblock content %}
+
+

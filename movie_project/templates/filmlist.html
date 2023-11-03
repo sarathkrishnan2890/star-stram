@@ -1,0 +1,99 @@
+{% extends 'home.html' %}
+{% block content%}
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="{% static 'css/filmlist.css'%}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+            crossorigin="anonymous"></script>
+</head>
+<body>
+
+<div class="full" style="background-color: rgba(26, 33, 39, 0.40);">
+    <img src="{% static 'images/dc2.jpg' %}" alt="Background Image" class="background-image">
+    <div class="container" style="color:white;font-size: 30px; font-weight: 900;color:yellow; ">
+        <header>
+            <div class="stram" style="color:yellow;padding-top:60px;"><h1><b>STREAM STAR</b></h1></div>
+            <h3><b>Awesome Movie Collection</b></h3>
+            <h5><b>For the love of streaming!<br> Explore, watch, and enjoy with Stream Star</b></h5>
+        </header>
+
+
+    </div>
+
+    <br><br><br>
+    <div class="headline" style="color:white;text-align:start;padding-left:30px;">
+
+        Pick a Language for Your Experience<br>
+    </div>
+    <div class="row row-cols-1 row-cols-md-6 g-5" style="text-align:center; padding-right:30px; padding-left:30px;">
+        <div class="collan">
+            <div class="card h-100" style="background-color:rgba(47, 48, 44, 0.412);">
+                <a href="{% url 'malayalam' %}">
+                    <img src="{% static 'images/9.jpg' %}" class="card-img-top" alt="...">
+                </a>
+                <div class="card-body">
+                    <div class="titles" style="color:white;">MALAYALAM</div>
+
+                </div>
+            </div>
+        </div>
+        <div class="collan">
+            <div class="card h-100" style="background-color:rgba(47, 48, 44, 0.412);">
+                <a href="{% url 'english_genre' %}">
+                    <img src="{% static 'images/16.jpg' %}" class="card-img-top" alt="...">
+                </a>
+                <div class="card-body">
+                    <div class="titles">ENGLISH</div>
+                </div>
+            </div>
+        </div>
+        <div class="collan">
+            <div class="card h-100" style="background-color:rgba(47, 48, 44, 0.412);">
+            <a href="{% url 'tamil' %}">
+                <img src="{% static 'images/22.jpg' %}" class="card-img-top" alt="...">
+            </a>
+            <div class="card-body">
+                <div class="titles">TAMIL</div>
+            </div>
+        </div>
+    </div>
+    <div class="collan">
+        <div class="card h-100" style="background-color:rgba(47, 48, 44, 0.412);">
+        <img src="{% static 'images/pk.jpg' %}" class="card-img-top" alt="...">
+        <div class="card-body">
+            <div class="titles">HINDI</div>
+        </div>
+    </div>
+</div>
+<div class="collan">
+    <div class="card h-100" style="background-color:rgba(47, 48, 44, 0.412);">
+    <img src="{% static 'images/kgf.jpg' %}" class="card-img-top" alt="...">
+    <div class="card-body">
+        <div class="titles">KANNADA</div>
+    </div>
+</div>
+</div>
+<div class="collan">
+    <div class="card h-100" style="background-color:rgba(47, 48, 44, 0.412);">
+        <img src="{% static 'images/24.jpg' %}" class="card-img-top" alt="...">
+        <div class="card-body" style="color:white;">
+            <div class="titles">TELUGU</div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+<br><br><br>
+
+
+</body>
+</html>
+{% endblock content%}

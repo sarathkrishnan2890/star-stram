@@ -1,0 +1,156 @@
+{% extends 'home.html' %}
+{% block content%}
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="{% static 'css/malayalam.css'%}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+            crossorigin="anonymous"></script>
+    <style>
+        .carousel-img {
+        height: 450px; /* Adjust the height as needed */
+        }
+
+    </style>
+</head>
+<body>
+<div class="adv">
+    <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="{% static 'images/cur5.jpg' %}" class="d-block w-100 carousel-img" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="{% static 'images/cur6.jpg' %}" class="d-block w-100 carousel-img" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="{% static 'images/cur5.jpg' %}" class="d-block w-100 carousel-img" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="{% static 'images/cur7.jpg' %}" class="d-block w-100 carousel-img" alt="...">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
+                data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
+                data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+</div>
+<br>
+<div class="headline">
+    Explore the Cinematic Universe! Select Your Favored Movie Genre in Malayalam
+</div>
+
+<div class="malayalam" style="padding:70px;">
+    <div class="row row-cols-1 row-cols-md-5 g-5" style="text-align:center;">
+        <div class="collan">
+            <div class="card" style="height: 310px; width: 195px;">
+                <a href="{% url 'malayalam_romantic' %}">
+                    <img src="{% static 'images/malrom.jpg' %}" class="card-img-top" alt="..."
+                         style="height: 100%; width: 100%; object-fit: cover;"></a>
+                <div class="card-body">
+                    <h6 class="titles">ROMANCE</h6>
+                </div>
+
+            </div>
+        </div>
+        <div class="collan">
+            <div class="card " style="height: 310px; width: 195px;">
+                <img src="{% static 'images/malco.jpg' %}" class="card-img-top" alt="..."
+                     style="height: 260px; width: 100%; object-fit: cover;">
+                <div class="card-body">
+                    <h6 class="titles">COMEDY</h6>
+                </div>
+            </div>
+        </div>
+        <div class="collan">
+            <div class="card" style="height: 310px; width: 195px;">
+                <img src="{% static 'images/malact.jpg' %}" class="card-img-top" alt="..."
+                     style="height: 300px; width: 100%; object-fit: cover;">
+                <div class="card-body">
+                    <h6 class="titles">ACTION</h6>
+                </div>
+            </div>
+        </div>
+        <div class="collan">
+            <div class="card" style="height: 310px; width: 195px;">
+                <img src="{% static 'images/malpo.jpg' %}" class="card-img-top" alt="..."
+                     style="height: 300px; width: 100%; object-fit: cover;">
+                <div class="card-body">
+                    <h6 class="titles">POLITICAL DRAMA</h6>
+                </div>
+            </div>
+        </div>
+        <div class="collan">
+            <div class="card" style="height: 310px; width: 195px;">
+                <img src="{% static 'images/2018.jpg' %}" class="card-img-top" alt="..."
+                     style="height: 300px; width: 100%; object-fit: cover;">
+                <div class="card-body">
+                    <h6 class="titles">SURVIVAL</h6>
+                </div>
+            </div>
+        </div>
+        <div class="collan">
+            <div class="card" style="height: 310px; width: 195px;">
+                <img src="{% static 'images/malsci.jpg' %}" class="card-img-top" alt="..."
+                     style="height: 300px; width: 100%; object-fit: cover;">
+                <div class="card-body">
+                    <h6 class="titles">SCI-FI</h6>
+                </div>
+            </div>
+        </div>
+        <div class="collan">
+            <div class="card" style="height: 310px; width: 195px;">
+                <img src="{% static 'images/malthri.jpg' %}" class="card-img-top" alt="..."
+                     style="height: 300px; width: 100%; object-fit: cover;">
+                <div class="card-body">
+                    <h6 class="titles">THRILLER</h6>
+                </div>
+            </div>
+        </div>
+        <div class="collan">
+            <div class="card" style="height: 310px; width: 195px;">
+                <img src="{% static 'images/maladve.jpg' %}" class="card-img-top" alt="..."
+                     style="height: 300px; width: 100%; object-fit: cover;">
+                <div class="card-body">
+                    <h6 class="titles">ADVENTURE</h6>
+                </div>
+            </div>
+        </div>
+
+        <div class="collan">
+            <div class="card" style="height: 310px; width: 195px;">
+                <img src="{% static 'images/malfam.jpg' %}" class="card-img-top" alt="..."
+                     style="height: 300px; width: 100%; object-fit: cover;">
+                <div class="card-body">
+                    <h6 class="titles">FAMILLY DRAMA</h6>
+                </div>
+            </div>
+        </div>
+        <div class="collan">
+            <div class="card" style="height: 310px; width: 195px;">
+                <img src="{% static 'images/malhor.jpg' %}" class="card-img-top" alt="..."
+                     style="height: 300px; width: 100%; object-fit: cover;">
+                <div class="card-body">
+                    <h6 class="titles">HORROR</h6>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+{% endblock content%}

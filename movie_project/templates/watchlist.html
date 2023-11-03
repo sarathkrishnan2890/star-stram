@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+  <h2>Your Watchlist</h2>
+  <ul>
+    {% for item in watchlist %}
+      <li>
+        <a href="{% url 'my_watchlist'  %}">
+          <img src="{{ item.Films.image_url }}" style="height: 225px; width: 100%;" class="card-img-top" alt="{{ movie.title }}">
+          {{ item.Films.title }}
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+
+</body>
+</html>

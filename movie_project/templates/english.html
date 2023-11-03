@@ -1,0 +1,86 @@
+{% extends 'home.html' %}
+{% block content%}
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <style>
+        .carousel-img {
+        height: 400px; 
+        }
+
+        .card {
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
+        }
+    </style>
+</head>
+<body>
+
+<div class="adv">
+  <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="{% static 'images/cur1.jpg' %}" class="d-block w-100 carousel-img" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="{% static 'images/cur4.jpg' %}" class="d-block w-100 carousel-img" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="{% static 'images/cur3.jpg' %}" class="d-block w-100 carousel-img" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="{% static 'images/cur4.jpg' %}" class="d-block w-100 carousel-img" alt="...">
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+</div>
+
+<div class="headline" style="font-size: 30px;font-weight: 900;color: rgb(58, 58, 56);text-align:center;">
+    Explore the Cinematic Universe! Select Your Favored Movie Genre in English
+</div>
+<br>
+<div class="movie-list" style="padding-left: 70px; padding-right: 70px;">
+    <div class="row row-cols-1 row-cols-md-5 g-5">
+        {% for entry in english_entries %}
+        <div class="col">
+            <div class="card" style="height: 300px; width: 195px;">
+                <a href="{% if entry.genre == 'Romance' %}{% url 'eng_romance' %}
+                   {% elif entry.genre == 'Thriller' %}{% url 'eng_thriller' %}
+                   {% elif entry.genre == 'Action' %}{% url 'english_action' %}
+                   {% elif entry.genre == 'Comedy' %}{% url 'eng_comedy' %}
+                   {% endif %}">
+                    <img src="{{ entry.image_url }}" style="height: 250px; width: 100%;" class="card-img-top"
+                         alt="{{ entry.genre }}">
+                </a>
+                <div class="card-body"
+                     style="font-size: 11px; font-weight: 800; color: rgb(58, 58, 56); text-align: center;">
+                    <h5 class="card-title"
+                        style="font-size: 11px; font-weight: 800; color: rgb(58, 58, 56); text-align: center;">{{entry.genre }}</h5>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+</body>
+</html>
+{% endblock content%}

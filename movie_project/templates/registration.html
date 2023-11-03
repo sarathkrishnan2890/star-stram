@@ -1,0 +1,52 @@
+{% extends 'home.html' %}
+{% block content %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="{% static 'css/registration.css' %}">
+</head>
+<body>
+<div class="full" style="background-color: rgba(26, 33, 39, 0.40);">
+<img src="{% static 'images/dc2.jpg' %}" alt="Background Image" class="background-image">
+<div class="container" style="width:950px;padding-top:150px; ">
+    <div class="total" style="background-color: rgba(34, 35, 41, 0.401);color:white;padding-bottom:400px;">
+        <nav class="navbar navbar-expand-lg" style="background-color:black; ">
+            <div class="container-fluid d-flex justify-content-center align-items-center">
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent"
+                        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <div class="name">
+                            <img src="{% static 'images/name.jpg' %}" class="card-img-top" alt="..."
+                                 style="height: 40px; width: 100%;padding-left:360px; ">
+                        </div>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="cont" style="border: 3px solid black;"><br>
+            <div class="center" style="font-size:20px; text-align:center;">
+                <b>Signup</b><br>
+            </div>
+            <div class="sign" style="padding-left:30px;">
+                <form method="post">
+                    {% csrf_token %}
+                    <div class="fom"><strong>{{form.as_p}}</strong></div>
+                    <div class="bu" style="text-align:center;"><button >Sign up</button></div>
+                </form>
+            </div><br>
+        </div>
+    </div>
+
+</body>
+</html>
+{% endblock content%}

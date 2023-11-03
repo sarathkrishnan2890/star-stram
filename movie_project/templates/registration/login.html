@@ -1,0 +1,56 @@
+{% extends 'home.html' %}
+{% block content%}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+    <title>Title</title>
+</head>
+<body>
+<div class="full" style="background-color: rgba(26, 33, 39, 0.40);">
+    <img src="{% static 'images/dc2.jpg' %}" alt="Background Image" class="background-image">
+    <div class="container" style="width:500px;padding-top:150px;padding-bottom:500px;">
+        <div class="total" style="background-color: rgba(34, 35, 41, 0.401);color:white;">
+    <navs class="navbar navbar-expand-lg" style="background-color:black; ">
+        <div class="container-fluid d-flex justify-content-center align-items-center">
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <div class="name">
+                        <img src="{% static 'images/name.jpg' %}" class="card-img-top" alt="..."
+                             style="height: 40px; width: 100%;padding-left:150px; ">
+                    </div>
+                </ul>
+            </div>
+        </div>
+    </navs>
+    <div class="login" style="padding-top:20px;padding-bottom:20px;border: 3px solid black;">
+        <div class="headlines" style="text-align:center; font-size:25px;"><b>Login</b></div>
+        <br>
+        <div class="log" style="text-align:start;padding-left:30px;">
+            <form method="post">
+                {% csrf_token%}
+                <div class="fom">{{ form.as_p }}</div>
+                <div class="but" style="">
+                    <button type="submit">Log in</button>
+                    Don't have a account <a class="cana" href="{% url 'signnup'%}">Create a new account</a>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>
+{% endblock content%}

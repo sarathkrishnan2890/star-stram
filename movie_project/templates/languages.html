@@ -1,0 +1,90 @@
+{% extends 'home.html' %}
+{% block content%}
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="{% static 'css/languages.css'%}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+            crossorigin="anonymous"></script>
+</head>
+<body>
+<br>
+<div class="headline">
+    Hi! Pick a Language for Your Experience<br><br>
+</div>
+
+<div class="lan">
+    <div class="row row-cols-1 row-cols-md-6 g-4" style="text-align:center; ">
+        <div class="collan">
+            <div class="card" style="height: 310px; width: 195px;">
+                <a href="{% url 'malayalam' %}">
+                    <img src="{% static 'images/9.jpg' %}" class="card-img-top" alt="..."
+                         style="height: 250px; width: 100%; object-fit: cover;">
+                </a>
+                <div class="card-body">
+                    <div class="titles">MALAYALAM</div>
+
+                </div>
+            </div>
+        </div>
+        <div class="collan">
+            <div class="card" style="height: 310px; width: 195px;">
+                <a href="{% url 'english_genre' %}">
+                    <img src="{% static 'images/16.jpg' %}" class="card-img-top" alt="..."
+                         style="height: 250px; width: 100%; object-fit: cover;">
+                </a>
+                <div class="card-body">
+                    <div class="titles">ENGLISH</div>
+                </div>
+            </div>
+        </div>
+        <div class="collan">
+            <div class="card" style="height: 310px; width: 195px;">
+                <a href="{% url 'tamil' %}">
+                    <img src="{% static 'images/22.jpg' %}" class="card-img-top" alt="..."
+                         style="height: 250px; width: 100%; object-fit: cover;">
+                </a>
+                <div class="card-body">
+                    <div class="titles">TAMIL</div>
+                </div>
+            </div>
+        </div>
+        <div class="collan">
+            <div class="card" style="height: 310px; width: 195px;">
+                <img src="{% static 'images/pk.jpg' %}" class="card-img-top" alt="..."
+                     style="height: 300px; width: 100%; object-fit: cover;">
+                <div class="card-body">
+                    <div class="titles">HINDI</div>
+                </div>
+            </div>
+        </div>
+        <div class="collan">
+            <div class="card" style="height: 310px; width: 195px;">
+                <img src="{% static 'images/kgf.jpg' %}" class="card-img-top" alt="..."
+                     style="height: 300px; width: 100%; object-fit: cover;">
+                <div class="card-body">
+                    <div class="titles">KANNADA</div>
+                </div>
+            </div>
+        </div>
+        <div class="collan">
+            <div class="card" style="height: 310px; width: 195px;">
+                <img src="{% static 'images/24.jpg' %}" class="card-img-top" alt="..."
+                     style="height: 300px; width: 100%; object-fit: cover;">
+                <div class="card-body">
+                    <div class="titles">TELUGU</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+{% endblock content%}

@@ -1,0 +1,121 @@
+{% extends 'home.html' %}
+{% block content%}
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="{% static 'css/malayalam.css'%}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+            crossorigin="anonymous"></script>
+</head>
+<body>
+<BR>
+<BR>
+<div class="headline">
+    Explore the Cinematic Universe! Select Your Favored Movie Genre in Tamil
+</div>
+<div class="malayalam" style="padding:70px;">
+    <div class="row row-cols-1 row-cols-md-5 g-5" style="text-align:center;">
+        <div class="collan">
+            <div class="card" style="height: 310px; width: 195px;">
+                <img src="{% static 'images/taro.jpg' %}" class="card-img-top" alt="..."
+                     style="height: 300px; width: 100%; object-fit: cover;">
+                <div class="card-body">
+                    <h6 class="titles">ROMANCE</h6>
+                </div>
+            </div>
+        </div>
+        <div class="collan">
+            <div class="card " style="height: 310px; width: 195px;">
+                <img src="{% static 'images/taps.jpg' %}" class="card-img-top" alt="..."
+                     style="height: 100%; width: 100%; object-fit: cover;">
+                <div class="card-body">
+                    <h6 class="titles">PSYCHO</h6>
+                </div>
+            </div>
+        </div>
+        <div class="collan">
+            <div class="card" style="height: 310px; width: 195px;">
+                <img src="{% static 'images/taac.jpg' %}" class="card-img-top" alt="..."
+                     style="height: 300px; width: 100%; object-fit: cover;">
+                <div class="card-body">
+                    <h6 class="titles">ACTION</h6>
+                </div>
+            </div>
+        </div>
+        <div class="collan">
+            <div class="card" style="height: 310px; width: 195px;">
+                <img src="{% static 'images/tapo.jpg' %}" class="card-img-top" alt="..."
+                     style="height: 300px; width: 100%; object-fit: cover;">
+                <div class="card-body">
+                    <h6 class="titles">POLITICAL DRAMA</h6>
+                </div>
+            </div>
+        </div>
+        <div class="collan">
+            <div class="card" style="height: 310px; width: 195px;">
+                <img src="{% static 'images/tasu.jpg' %}" class="card-img-top" alt="..."
+                     style="height: 300px; width: 100%; object-fit: cover;">
+                <div class="card-body">
+                    <h6 class="titles">SURVIVAL</h6>
+                </div>
+            </div>
+        </div>
+        <div class="collan">
+            <div class="card" style="height: 310px; width: 195px;">
+                <img src="{% static 'images/tasci.jpg' %}" class="card-img-top" alt="..."
+                     style="height: 300px; width: 100%; object-fit: cover;">
+                <div class="card-body">
+                    <h6 class="titles">SCI-FI</h6>
+                </div>
+            </div>
+        </div>
+        <div class="collan">
+            <div class="card" style="height: 310px; width: 195px;">
+                <img src="{% static 'images/tath.jpg' %}" class="card-img-top" alt="..."
+                     style="height: 300px; width: 100%; object-fit: cover;">
+                <div class="card-body">
+                    <h6 class="titles">THRILLER</h6>
+                </div>
+            </div>
+        </div>
+        <div class="collan">
+            <div class="card" style="height: 310px; width: 195px;">
+                <img src="{% static 'images/taad.jpg' %}" class="card-img-top" alt="..."
+                     style="height: 300px; width: 100%; object-fit: cover;">
+                <div class="card-body">
+                    <h6 class="titles">ADVENTURE</h6>
+                </div>
+            </div>
+        </div>
+
+        <div class="collan">
+            <div class="card" style="height: 310px; width: 195px;">
+                <img src="{% static 'images/tafa.jpg' %}" class="card-img-top" alt="..."
+                     style="height: 300px; width: 100%; object-fit: cover;">
+                <div class="card-body">
+                    <h6 class="titles">FAMILLY DRAMA</h6>
+                </div>
+            </div>
+        </div>
+        <div class="collan">
+            <div class="card" style="height: 310px; width: 195px;">
+                <img src="{% static 'images/taho.jpg' %}" class="card-img-top" alt="..."
+                     style="height: 300px; width: 100%; object-fit: cover;">
+                <div class="card-body">
+                    <h6 class="titles">HORROR</h6>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
+{% endblock content%}
